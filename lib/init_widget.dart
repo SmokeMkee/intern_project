@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intern_project/bloc/product_details/bloc_product_details.dart';
 import 'package:intern_project/bloc/products/bloc_products.dart';
 import 'package:intern_project/repo/api.dart';
 import 'package:intern_project/repo/repo_products.dart';
@@ -30,7 +31,12 @@ class InitWidget extends StatelessWidget {
           create: (context) => BlocProducts(
             repo: RepositoryProvider.of<RepoProducts>(context),
           )..add(
-            EventProductsFilter('asc'),
+              EventProductsFilter('asc', 'all', '1'),
+            ),
+        ),
+        BlocProvider(
+          create: (context) => BlocProductDetails(
+            repo: RepositoryProvider.of<RepoProducts>(context),
           ),
         ),
       ], child: child),

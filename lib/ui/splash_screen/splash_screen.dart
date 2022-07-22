@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:intern_project/constants/app_assets.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +13,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     final repoSettings = Provider.of<RepoSettings>(
@@ -22,14 +20,14 @@ class _SplashScreenState extends State<SplashScreen> {
       listen: false,
     );
     repoSettings.init().whenComplete(
-          () async {
+      () async {
         var defaultLocale = const Locale('ru', 'RU');
         final locale = await repoSettings.readLocale();
         if (locale == 'en') {
           defaultLocale = const Locale('en');
         }
         S.load(defaultLocale).whenComplete(
-              () {
+          () {
             Navigator.of(context).pushReplacementNamed('/auth_screen');
           },
         );
@@ -38,17 +36,13 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image:  AssetImage(AppAssets.images.noAvatar),
-          fit: BoxFit.cover
-        )
+            image: AssetImage(AppAssets.images.noAvatar), fit: BoxFit.cover),
       ),
-
     );
   }
 }

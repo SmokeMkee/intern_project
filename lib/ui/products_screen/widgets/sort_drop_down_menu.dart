@@ -1,35 +1,29 @@
-
 import 'package:flutter/material.dart';
 
-class SortDropDownMenu extends StatefulWidget {
-  const SortDropDownMenu({Key? key}) : super(key: key);
+import '../../../generated/l10n.dart';
 
-  @override
-  State<SortDropDownMenu> createState() => _SortDropDownMenuState();
-}
+class SortDropDownMenu extends StatelessWidget {
+  const SortDropDownMenu(
+      {Key? key, required this.onChanged, required this.selectedValue})
+      : super(key: key);
 
-class _SortDropDownMenuState extends State<SortDropDownMenu> {
-
-  List<DropdownMenuItem<String>> get dropdownItems{
-    List<DropdownMenuItem<String>> menuItems = const [
-      DropdownMenuItem(value: "Sort: asc", child: Text("Sort: asc")),
-      DropdownMenuItem(value: "Sort: desc", child: Text("Sort: desc")),
-    ];
-    return menuItems;
-  }
-  String selectedValue = "Sort: asc";
-
-
+  final String selectedValue;
+  final ValueChanged<String?>? onChanged;
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
-        value: selectedValue,
-        onChanged: (String? newValue){
-          setState(() {
-            selectedValue = newValue!;
-          });
-        },
-        items: dropdownItems
+      value: selectedValue,
+      onChanged: onChanged,
+      items: [
+        DropdownMenuItem(
+          value: "asc",
+          child: Text(S.of(context).asc),
+        ),
+        DropdownMenuItem(
+          value: "desc",
+          child: Text(S.of(context).desc),
+        ),
+      ],
     );
   }
 }

@@ -49,6 +49,146 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Products`
+  String get products {
+    return Intl.message(
+      'Products',
+      name: 'products',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message(
+      'Error',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sort: asc`
+  String get asc {
+    return Intl.message(
+      'Sort: asc',
+      name: 'asc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sort: desc`
+  String get desc {
+    return Intl.message(
+      'Sort: desc',
+      name: 'desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category`
+  String get category {
+    return Intl.message(
+      'Category',
+      name: 'category',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `electronics`
+  String get electronics {
+    return Intl.message(
+      'electronics',
+      name: 'electronics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `jewelery`
+  String get jewelery {
+    return Intl.message(
+      'jewelery',
+      name: 'jewelery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `men's clothing`
+  String get menClothing {
+    return Intl.message(
+      'men\'s clothing',
+      name: 'menClothing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `women's clothing`
+  String get womenClothing {
+    return Intl.message(
+      'women\'s clothing',
+      name: 'womenClothing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rating : all`
+  String get ratingAll {
+    return Intl.message(
+      'Rating : all',
+      name: 'ratingAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price: `
+  String get price {
+    return Intl.message(
+      'Price: ',
+      name: 'price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rating: `
+  String get rating {
+    return Intl.message(
+      'Rating: ',
+      name: 'rating',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product Details`
+  String get productDetails {
+    return Intl.message(
+      'Product Details',
+      name: 'productDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in`
+  String get signIn {
+    return Intl.message(
+      'Sign in',
+      name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

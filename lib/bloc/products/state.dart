@@ -1,9 +1,5 @@
 part of 'bloc_products.dart';
 
-
-
-
-
 abstract class StateBlocProducts {}
 
 class StateProductsInitial extends StateBlocProducts {}

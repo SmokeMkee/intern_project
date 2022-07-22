@@ -1,38 +1,41 @@
 import 'package:flutter/material.dart';
 
-class CategoryDropDownMenu extends StatefulWidget {
-  const CategoryDropDownMenu({Key? key}) : super(key: key);
+import '../../../generated/l10n.dart';
 
-  @override
-  State<CategoryDropDownMenu> createState() => _CategoryDropDownMenuState();
-}
+class CategoryDropDownMenu extends StatelessWidget {
+  const CategoryDropDownMenu(
+      {Key? key, required this.onChanged, required this.selectedValue})
+      : super(key: key);
 
-class _CategoryDropDownMenuState extends State<CategoryDropDownMenu> {
-
-  List<DropdownMenuItem<String>> get dropdownItems{
-    List<DropdownMenuItem<String>> menuItems = const [
-      DropdownMenuItem(value: "Category", child: Text("Category")),
-      DropdownMenuItem(value: "electronics", child: Text("electronics")),
-      DropdownMenuItem(value: "jewelery", child: Text("jewelery")),
-      DropdownMenuItem(value: "men's clothing", child: Text("men's clothing")),
-      DropdownMenuItem(value: "women's clothing", child: Text("women's clothing")),
-    ];
-    return menuItems;
-  }
-
-  String selectedValue = "Category";
-
-
+  final ValueChanged<String?>? onChanged;
+  final String selectedValue;
   @override
   Widget build(BuildContext context) {
-    return  DropdownButton(
-        value: selectedValue,
-        onChanged: (String? newValue){
-          setState(() {
-            selectedValue = newValue!;
-          });
-        },
-        items: dropdownItems
+    return DropdownButton(
+      value: selectedValue,
+      onChanged: onChanged,
+      items: [
+        DropdownMenuItem(
+          value: "Category",
+          child: Text(S.of(context).category),
+        ),
+        DropdownMenuItem(
+          value: "electronics",
+          child: Text(S.of(context).electronics),
+        ),
+        DropdownMenuItem(
+          value: "jewelery",
+          child: Text(S.of(context).jewelery),
+        ),
+        DropdownMenuItem(
+          value: "men's clothing",
+          child: Text(S.of(context).menClothing),
+        ),
+        DropdownMenuItem(
+          value: "women's clothing",
+          child: Text(S.of(context).womenClothing),
+        ),
+      ],
     );
   }
 }

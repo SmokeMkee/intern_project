@@ -1,17 +1,14 @@
 class Rating {
-   var rate;
+  final double? rate;
   final int? count;
 
   Rating({
     this.count,
-    this.rate
-});
+    this.rate,
+  });
 
   factory Rating.fromJson(Map<String, dynamic>? json) {
     if (json == null) return Rating();
-    return Rating(
-
-          rate: json["rate"],
-          count:json["count"] );
+    return Rating(rate: json["rate"], count: json["count"]);
   }
 }

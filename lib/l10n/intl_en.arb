@@ -1,1 +1,17 @@
-{}
+{
+  "products" : "Products",
+  "error" : "Error",
+  "asc" : "Sort: asc",
+  "desc" : "Sort: desc",
+  "category" : "Category",
+  "electronics" : "electronics",
+  "jewelery" : "jewelery",
+  "menClothing" : "men's clothing",
+  "womenClothing" : "women's clothing",
+  "ratingAll" : "Rating : all",
+  "price": "Price: ",
+  "rating" : "Rating: ",
+  "productDetails" : "Product Details",
+  "signIn" : "Sign in"
+
+}

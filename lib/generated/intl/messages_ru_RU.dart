@@ -21,5 +21,23 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ru_RU';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "asc":
+            MessageLookupByLibrary.simpleMessage("Сортировать: по возрастанию"),
+        "category": MessageLookupByLibrary.simpleMessage("Категория"),
+        "desc":
+            MessageLookupByLibrary.simpleMessage("Сортировать по возрастанию"),
+        "electronics": MessageLookupByLibrary.simpleMessage("электроника"),
+        "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
+        "jewelery": MessageLookupByLibrary.simpleMessage("ювелирные изделия"),
+        "menClothing": MessageLookupByLibrary.simpleMessage("мужская одежда"),
+        "price": MessageLookupByLibrary.simpleMessage("Цена: "),
+        "productDetails":
+            MessageLookupByLibrary.simpleMessage("Сведения о продукте"),
+        "products": MessageLookupByLibrary.simpleMessage("Продукты"),
+        "rating": MessageLookupByLibrary.simpleMessage("Рейтинг: "),
+        "ratingAll": MessageLookupByLibrary.simpleMessage("Рейтинг: все"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
+        "womenClothing": MessageLookupByLibrary.simpleMessage("женская одежда")
+      };
 }

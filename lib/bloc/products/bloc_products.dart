@@ -1,4 +1,5 @@
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:intern_project/dto/products.dart';
@@ -14,7 +15,17 @@ class BlocProducts extends Bloc<EventBlocPersons, StateBlocProducts> {
     on<EventProductsFilter>(
           (event, emit) async {
         emit(StateProductsLoading());
-        final result = await repo.filterByAscDesc(event.name);
+        final result = await repo.filterByAscDesc( event.sort!);
+        final sortedList = result.productList!.where((element) {
+          if(event.category != "all"){
+            return element.category == event.category &&
+                element.rating!.rate! > double.parse(event.rate!).floor();
+
+          }else{
+            return element.rating!.rate! > double.parse(event.rate!).floor();
+          }
+        }).toList();
+
         if (result.errorMessage != null) {
           emit(
             StateProductsError(error: result.errorMessage!),
@@ -22,7 +33,7 @@ class BlocProducts extends Bloc<EventBlocPersons, StateBlocProducts> {
           return;
         }
         emit(
-          StateProductsData(data: result.productList!),
+          StateProductsData(data: sortedList),
         );
       },
     );

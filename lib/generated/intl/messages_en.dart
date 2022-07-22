@@ -21,5 +21,22 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "asc": MessageLookupByLibrary.simpleMessage("Sort: asc"),
+        "category": MessageLookupByLibrary.simpleMessage("Category"),
+        "desc": MessageLookupByLibrary.simpleMessage("Sort: desc"),
+        "electronics": MessageLookupByLibrary.simpleMessage("electronics"),
+        "error": MessageLookupByLibrary.simpleMessage("Error"),
+        "jewelery": MessageLookupByLibrary.simpleMessage("jewelery"),
+        "menClothing": MessageLookupByLibrary.simpleMessage("men\'s clothing"),
+        "price": MessageLookupByLibrary.simpleMessage("Price: "),
+        "productDetails":
+            MessageLookupByLibrary.simpleMessage("Product Details"),
+        "products": MessageLookupByLibrary.simpleMessage("Products"),
+        "rating": MessageLookupByLibrary.simpleMessage("Rating: "),
+        "ratingAll": MessageLookupByLibrary.simpleMessage("Rating : all"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
+        "womenClothing":
+            MessageLookupByLibrary.simpleMessage("women\'s clothing")
+      };
 }

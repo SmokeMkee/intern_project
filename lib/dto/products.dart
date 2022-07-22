@@ -22,12 +22,12 @@ class Products {
     return Products(
       id: json["id"],
       title: json["title"],
-      price: json["price"],
+      price: (json["price"] as num).toDouble(),
       description: json["description"],
       category: json["category"],
       image: json["image"],
       rating: Rating(
-        rate: json["rating"]["rate"],
+        rate: (json["rating"]["rate"] as num).toDouble(),
         count: json["rating"]["count"],
       ),
     );

@@ -4,6 +4,7 @@ import 'package:intern_project/init_widget.dart';
 import 'package:intern_project/repo/repo_settings.dart';
 import 'package:intern_project/ui/authorization_screen/authorization_screen.dart';
 import 'package:intern_project/ui/navigation/navigation.dart';
+import 'package:intern_project/ui/product_details_screen/product_details_screen.dart';
 import 'package:intern_project/ui/splash_screen/splash_screen.dart';
 
 import 'generated/l10n.dart';
@@ -37,8 +38,10 @@ class InternProject extends StatelessWidget {
           '/splash_screen': (context) => const SplashScreen(),
           '/auth_screen': (context) => const AuthorizationScreen(),
           '/auth_screen/navigation_bar': (context) => const Navigation(),
+          '/auth_screen/navigation_bar/products/product_details': (context) =>
+              const ProductDetailsScreen(),
         },
-        initialRoute: '/splash_screen',
+        initialRoute: '/auth_screen/navigation_bar',
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -51,8 +54,3 @@ class InternProject extends StatelessWidget {
     );
   }
 }
-
-
-
-
-

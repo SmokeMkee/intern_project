@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:intern_project/ui/products_screen/products_screen.dart';
 import 'package:intern_project/ui/settings_screen/settings_screen.dart';
 
-
-
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
 
@@ -16,14 +14,16 @@ class NavigationState extends State<Navigation> {
   int _selectedPage = 0;
 
   void onSelectPage(int index) {
-    setState(() {
-      _selectedPage = index;
-    });
+    setState(
+      () {
+        _selectedPage = index;
+      },
+    );
   }
 
   static final List<Widget> _widgetOptions = <Widget>[
-      const ProductsScreen(),
-      const SettingsScreen()
+    const ProductsScreen(),
+    const SettingsScreen()
   ];
 
   @override
@@ -41,7 +41,7 @@ class NavigationState extends State<Navigation> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label:"Settings",
+            label: "Settings",
           ),
         ],
         onTap: onSelectPage,

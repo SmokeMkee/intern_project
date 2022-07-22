@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:intern_project/constants/app_colors.dart';
 import 'package:intern_project/constants/app_styles.dart';
 
+import '../../../generated/l10n.dart';
+
 class AuthorizationButton extends StatelessWidget {
   const AuthorizationButton(
       {Key? key,
@@ -52,7 +54,7 @@ class AuthorizationButton extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 15),
               child: Text(
-                'Sign in',
+                S.of(context).signIn,
                 style: AppStyles.s16w400.copyWith(color: Colors.white),
               ),
             ),
