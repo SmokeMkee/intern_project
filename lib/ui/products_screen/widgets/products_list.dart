@@ -61,7 +61,7 @@ class ProductsList extends StatelessWidget {
                               children: [
                                 Expanded(
                                   child: Text(
-                                    "${S.of(context).price}${itemList[index].price}",
+                                    "${S.of(context).price} \$ ${itemList[index].price}",
                                     overflow: TextOverflow.ellipsis,
                                     softWrap: true,
                                   ),

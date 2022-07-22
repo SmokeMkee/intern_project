@@ -31,7 +31,7 @@ class InitWidget extends StatelessWidget {
           create: (context) => BlocProducts(
             repo: RepositoryProvider.of<RepoProducts>(context),
           )..add(
-              EventProductsFilter('asc', 'all', '1'),
+              EventProductsFilter('asc', 'Category', '1'),
             ),
         ),
         BlocProvider(

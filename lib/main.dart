@@ -41,7 +41,7 @@ class InternProject extends StatelessWidget {
           '/auth_screen/navigation_bar/products/product_details': (context) =>
               const ProductDetailsScreen(),
         },
-        initialRoute: '/auth_screen/navigation_bar',
+        initialRoute: '/splash_screen',
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

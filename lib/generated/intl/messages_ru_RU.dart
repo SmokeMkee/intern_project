@@ -25,8 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "asc":
             MessageLookupByLibrary.simpleMessage("Сортировать: по возрастанию"),
         "category": MessageLookupByLibrary.simpleMessage("Категория"),
-        "desc":
-            MessageLookupByLibrary.simpleMessage("Сортировать по возрастанию"),
+        "desc": MessageLookupByLibrary.simpleMessage("Сортировка: по убыванию"),
         "electronics": MessageLookupByLibrary.simpleMessage("электроника"),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "jewelery": MessageLookupByLibrary.simpleMessage("ювелирные изделия"),

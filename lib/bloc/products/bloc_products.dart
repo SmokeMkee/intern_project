@@ -17,7 +17,8 @@ class BlocProducts extends Bloc<EventBlocPersons, StateBlocProducts> {
         emit(StateProductsLoading());
         final result = await repo.filterByAscDesc( event.sort!);
         final sortedList = result.productList!.where((element) {
-          if(event.category != "all"){
+          if(event.category != "Category" && event.category != null){
+            print(event.category);
             return element.category == event.category &&
                 element.rating!.rate! > double.parse(event.rate!).floor();
 
