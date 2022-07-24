@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
+import '../../constants/app_colors.dart';
 import '../../constants/app_styles.dart';
 import '../../generated/l10n.dart';
 import '../../repo/repo_settings.dart';
@@ -18,14 +19,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Settings',
+        centerTitle: true,
+        backgroundColor: AppColors.bgColorAppBar,
+        title: Text(
+          S.of(context).settings,
           // S.of(context).settings,
           style: AppStyles.s20w500,
         ),
         elevation: 0.0,
       ),
-
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -35,36 +37,35 @@ class _SettingsScreenState extends State<SettingsScreen> {
               // Text('${S.of(context).language}: '),
               DropdownButton<String>(
                 value: Intl.getCurrentLocale(),
-                items: const [
+                items: [
                   DropdownMenuItem(
                     value: 'en',
-                    child: Text(
-                      'English'
-                      // S.of(context).english,
-                    ),
+                    child: Text(S.of(context).english
+                        // S.of(context).english,
+                        ),
                   ),
                   DropdownMenuItem(
                     value: 'ru_RU',
-                    child: Text(
-                      'Russian'
-                      // S.of(context).russian,
-                    ),
+                    child: Text(S.of(context).russian
+                        // S.of(context).russian,
+                        ),
                   ),
                 ],
-                onChanged: (value)  {
+                onChanged: (value) {
                   if (value == null) return;
                   if (value == 'ru_RU') {
-                     S.load(
+                    S.load(
                       const Locale('ru', 'RU'),
                     );
                     setState(() {});
                   } else if (value == 'en') {
-                     S.load(
+                    S.load(
                       const Locale('en'),
                     );
                     setState(() {});
                   }
-                  final repoSettings = Provider.of<RepoSettings>(context, listen: false);
+                  final repoSettings =
+                      Provider.of<RepoSettings>(context, listen: false);
                   repoSettings.saveLocale(value);
                 },
               ),

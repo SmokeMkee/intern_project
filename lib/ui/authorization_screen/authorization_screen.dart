@@ -27,44 +27,48 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Form(
         key: _formKey,
         child: Column(
           children: [
             Flexible(
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 70, horizontal: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     image: DecorationImage(
-                        image: AssetImage(AppAssets.images.noAvatar),
-                        fit: BoxFit.cover),
+                        image: AssetImage(AppAssets.images.logo),
+                        fit: BoxFit.contain),
                   ),
                 ),
               ),
             ),
-            Flexible(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    LoginTextFormField(
-                      controller: loginController,
-                    ),
-                    PasswordTextFormField(
-                      controller: passwordController,
-                    ),
-                    AuthorizationButton(
-                      loginController: loginController,
-                      passwordController: passwordController,
-                      context: context,
-                      formKey: _formKey,
-                    ),
-                  ],
-                ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  LoginTextFormField(
+                    controller: loginController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  PasswordTextFormField(
+                    controller: passwordController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  AuthorizationButton(
+                    loginController: loginController,
+                    passwordController: passwordController,
+                    context: context,
+                    formKey: _formKey,
+                  ),
+                ],
               ),
             ),
           ],

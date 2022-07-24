@@ -27,15 +27,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "category": MessageLookupByLibrary.simpleMessage("Категория"),
         "desc": MessageLookupByLibrary.simpleMessage("Сортировка: по убыванию"),
         "electronics": MessageLookupByLibrary.simpleMessage("электроника"),
+        "english": MessageLookupByLibrary.simpleMessage("Английский"),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "jewelery": MessageLookupByLibrary.simpleMessage("ювелирные изделия"),
+        "login": MessageLookupByLibrary.simpleMessage("Логин"),
         "menClothing": MessageLookupByLibrary.simpleMessage("мужская одежда"),
+        "password": MessageLookupByLibrary.simpleMessage("Пароль"),
         "price": MessageLookupByLibrary.simpleMessage("Цена: "),
         "productDetails":
             MessageLookupByLibrary.simpleMessage("Сведения о продукте"),
         "products": MessageLookupByLibrary.simpleMessage("Продукты"),
         "rating": MessageLookupByLibrary.simpleMessage("Рейтинг: "),
         "ratingAll": MessageLookupByLibrary.simpleMessage("Рейтинг: все"),
+        "russian": MessageLookupByLibrary.simpleMessage("Русский"),
+        "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
         "womenClothing": MessageLookupByLibrary.simpleMessage("женская одежда")
       };

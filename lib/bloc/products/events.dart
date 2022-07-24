@@ -7,4 +7,16 @@ class EventProductsFilter extends EventBlocPersons {
   final String? sort;
   final String? category;
   final String? rate;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventProductsFilter &&
+          runtimeType == other.runtimeType &&
+          sort == other.sort &&
+          category == other.category &&
+          rate == other.rate;
+
+  @override
+  int get hashCode => sort.hashCode ^ category.hashCode ^ rate.hashCode;
 }

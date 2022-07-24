@@ -16,11 +16,11 @@ class ProductsScreen extends StatefulWidget {
   State<ProductsScreen> createState() => _ProductsScreenState();
 }
 
-class _ProductsScreenState extends State<ProductsScreen> {
-  String category = 'Category';
-  String sort = 'asc';
-  String rate = '1';
+String category = 'Category';
+String sort = 'asc';
+String rate = '1';
 
+class _ProductsScreenState extends State<ProductsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

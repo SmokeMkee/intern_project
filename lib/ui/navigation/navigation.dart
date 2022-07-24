@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:intern_project/ui/products_screen/products_screen.dart';
 import 'package:intern_project/ui/settings_screen/settings_screen.dart';
 
+import '../../generated/l10n.dart';
+
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
 
@@ -34,14 +36,14 @@ class NavigationState extends State<Navigation> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedPage,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_basket_rounded),
-            label: "Products",
+            icon: const Icon(Icons.shopping_basket_rounded),
+            label: S.of(context).products,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: "Settings",
+            icon: const Icon(Icons.settings),
+            label: S.of(context).settings,
           ),
         ],
         onTap: onSelectPage,

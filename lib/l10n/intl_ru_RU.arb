@@ -12,7 +12,12 @@
   "price" : "Цена: ",
   "rating" : "Рейтинг: ",
   "productDetails" : "Сведения о продукте",
-  "signIn" : "Войти"
+  "signIn" : "Войти",
+  "settings" : "Настройки",
+  "english" : "Английский" ,
+  "russian" : "Русский",
+  "login": "Логин",
+  "password" : "Пароль"
 
 
 }

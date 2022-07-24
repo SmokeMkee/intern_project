@@ -33,6 +33,7 @@ class InternProject extends StatelessWidget {
   Widget build(BuildContext context) {
     return InitWidget(
       child: MaterialApp(
+        theme: ThemeData(),
         debugShowCheckedModeBanner: false,
         routes: {
           '/splash_screen': (context) => const SplashScreen(),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_styles.dart';
+import '../../../generated/l10n.dart';
 
 class PasswordTextFormField extends StatelessWidget {
   const PasswordTextFormField({Key? key, required this.controller})
@@ -12,11 +13,15 @@ class PasswordTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      obscureText: true,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-        hintText: 'Login',
+        hintText: S.of(context).password,
         hintStyle: AppStyles.s16w400,
         enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+            borderSide: BorderSide.none),
+        focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide.none),
         focusedErrorBorder: OutlineInputBorder(

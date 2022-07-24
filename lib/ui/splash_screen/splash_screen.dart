@@ -19,29 +19,38 @@ class _SplashScreenState extends State<SplashScreen> {
       context,
       listen: false,
     );
-    repoSettings.init().whenComplete(
-      () async {
-        var defaultLocale = const Locale('ru', 'RU');
-        final locale = await repoSettings.readLocale();
-        if (locale == 'en') {
-          defaultLocale = const Locale('en');
-        }
-        S.load(defaultLocale).whenComplete(
-          () {
-            Navigator.of(context).pushReplacementNamed('/auth_screen');
-          },
-        );
-      },
-    );
+    Future.delayed(
+      const Duration(seconds: 1),
+    ).whenComplete(() {
+      repoSettings.init().whenComplete(
+        () async {
+          var defaultLocale = const Locale('ru', 'RU');
+          final locale = await repoSettings.readLocale();
+          if (locale == 'en') {
+            defaultLocale = const Locale('en');
+          }
+          S.load(defaultLocale).whenComplete(
+            () {
+              Navigator.of(context).pushReplacementNamed('/auth_screen');
+            },
+          );
+        },
+      );
+    });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage(AppAssets.images.noAvatar), fit: BoxFit.cover),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(AppAssets.images.logo), fit: BoxFit.contain),
+          ),
+        ),
       ),
     );
   }

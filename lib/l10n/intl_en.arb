@@ -12,6 +12,11 @@
   "price": "Price: ",
   "rating" : "Rating: ",
   "productDetails" : "Product Details",
-  "signIn" : "Sign in"
+  "signIn" : "Sign in",
+  "settings" : "Settings",
+  "english" : "English",
+  "russian" : "Russian",
+  "login": "Login",
+  "password" : "Password"
 
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intern_project/constants/app_colors.dart';
 import 'package:intern_project/constants/app_styles.dart';
 
+import '../../../generated/l10n.dart';
+
 class LoginTextFormField extends StatelessWidget {
   const LoginTextFormField({Key? key, required this.controller})
       : super(key: key);
@@ -13,9 +15,12 @@ class LoginTextFormField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-        hintText: 'Login',
+        hintText: S.of(context).login,
         hintStyle: AppStyles.s16w400,
         enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+            borderSide: BorderSide.none),
+        focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide.none),
         focusedErrorBorder: OutlineInputBorder(

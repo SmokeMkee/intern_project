@@ -11,6 +11,16 @@ class StateProductsData extends StateBlocProducts {
     required this.data,
   });
   final List<Products> data;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is StateProductsData &&
+          runtimeType == other.runtimeType &&
+          data == other.data;
+
+  @override
+  int get hashCode => data.hashCode;
 }
 
 class StateProductsError extends StateBlocProducts {
