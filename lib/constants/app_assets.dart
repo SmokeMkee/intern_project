@@ -5,7 +5,6 @@ abstract class AppAssets {
 
 class _Images {
   const _Images();
-  final String noAvatar = 'assets/images/bitmap/splash_screen_photo.png';
   final String logo = 'assets/images/bitmap/logo.png';
 }
 
